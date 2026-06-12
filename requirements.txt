@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+python-multipart
+supabase
+redis
+celery
+groq
+paddleocr
+paddlepaddle
+langchain
+sentence-transformers
+python-dotenv
+pypdf
