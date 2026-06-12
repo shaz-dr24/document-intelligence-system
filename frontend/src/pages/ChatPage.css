@@ -1,0 +1,202 @@
+/* ─── ChatPage Layout ──────────────────────────────────────────────── */
+
+.chat-page {
+  min-height: 100vh;
+  background: #0f1117;
+  color: #e2e4ed;
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+}
+
+/* ─── Header ───────────────────────────────────────────────────────── */
+
+.chat-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2.5rem 2.5rem 2rem;
+  border-bottom: 1px solid rgba(255 255 255 / 0.06);
+  background: linear-gradient(
+    160deg,
+    rgba(99, 102, 241, 0.06) 0%,
+    transparent 60%
+  );
+  flex-wrap: wrap;
+}
+
+/* ─── Eyebrow / Title / Subtitle ───────────────────────────────────── */
+
+.page-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6366f1;
+  margin-bottom: 0.45rem;
+}
+
+.page-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #f0f1f8;
+  margin: 0 0 0.4rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.page-subtitle {
+  font-size: 0.875rem;
+  color: #7b7f96;
+  margin: 0;
+  max-width: 38ch;
+  line-height: 1.55;
+}
+
+/* ─── Animate-in ───────────────────────────────────────────────────── */
+
+.animate-in {
+  animation: fadeSlideDown 0.35s ease both;
+}
+
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─── Document Picker ──────────────────────────────────────────────── */
+
+.chat-doc-picker {
+  display: flex;
+  align-items: center;
+  animation: fadeIn 0.4s 0.1s ease both;
+  flex-shrink: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.picker-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  background: rgba(255 255 255 / 0.04);
+  border: 1px solid rgba(255 255 255 / 0.09);
+  border-radius: 12px;
+  padding: 0.9rem 1.1rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  min-width: 240px;
+  box-shadow:
+    0 4px 24px rgba(0 0 0 / 0.35),
+    inset 0 1px 0 rgba(255 255 255 / 0.06);
+  transition: border-color 0.2s;
+}
+
+.picker-wrap:focus-within {
+  border-color: rgba(99, 102, 241, 0.5);
+}
+
+.picker-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #5a5e78;
+}
+
+.doc-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: rgba(255 255 255 / 0.04);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236366f1' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  border: 1px solid rgba(255 255 255 / 0.08);
+  border-radius: 7px;
+  color: #e2e4ed;
+  font-size: 0.875rem;
+  padding: 0.5rem 2.25rem 0.5rem 0.75rem;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+
+.doc-select:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.18);
+}
+
+.doc-select option {
+  background: #1c1f2e;
+  color: #e2e4ed;
+}
+
+/* ─── Buttons ──────────────────────────────────────────────────────── */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.6rem 1.25rem;
+  transition: opacity 0.15s, transform 0.15s, box-shadow 0.15s;
+  white-space: nowrap;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background: #6366f1;
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(99, 102, 241, 0.35);
+}
+
+.btn-primary:hover {
+  opacity: 0.88;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.45);
+}
+
+/* ─── Responsive ───────────────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .chat-header {
+    padding: 1.75rem 1.25rem 1.5rem;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .picker-wrap {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .page-title {
+    font-size: 1.4rem;
+  }
+}
+
+/* ─── Reduced motion ───────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-in,
+  .chat-doc-picker {
+    animation: none;
+  }
+}

@@ -1,0 +1,46 @@
+/* DocumentsPage.css */
+.docs-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.docs-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding-top: 0.25rem;
+}
+
+.last-updated {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-disabled);
+  margin-right: 0.25rem;
+}
+
+.processing-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--warning-bg);
+  border: 1px solid var(--warning-border);
+  border-radius: var(--radius-md);
+  padding: 0.65rem 1rem;
+  font-size: 0.85rem;
+  color: var(--warning);
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+}
+
+.processing-banner strong {
+  font-weight: 700;
+}
+
+.docs-loading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
