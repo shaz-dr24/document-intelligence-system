@@ -23,4 +23,8 @@ opencv-python-headless
 
 pypdf
 
+<<<<<<< HEAD
 langchain
+=======
+langchain
+>>>>>>> 4195eaa (Configure Upstash Redis and Celery)
