@@ -30,3 +30,9 @@ def home():
     return {
         "message": "Document Intelligence API Running"
     }
+
+@app.get("/cors-test")
+def cors_test():
+    return {
+        "allowed_origin": "https://document-intelligence-system-u79i.vercel.app"
+    }
