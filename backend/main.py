@@ -7,6 +7,9 @@ from routes.document_routes import router as document_router
 from routes.dashboard_routes import router as dashboard_router
 from routes.chat_routes import router as chat_router
 
+
+print("RUNNING BACKEND VERSION 668ee9a")
+
 app = FastAPI(
     title="Document Intelligence System"
 )
